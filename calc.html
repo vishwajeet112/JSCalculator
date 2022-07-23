@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Library</title>
+    <style>
+        .container{
+            max-width: 400px;
+            margin-left: 35%;
+            border: 5px solid rgb(1, 10, 132);
+        }
+        .display{
+            text-align: right;
+            height: 70px;
+            line-height: 70px;
+            padding: 16px 8px;
+            font-size: 25px;
+            background: rgb(47, 47, 101);
+            border: 2px solid black;
+        }
+        .buttons{
+            display: grid;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            
+        }
+        .buttons div{
+            /* border-top:  1px solid black;
+            border-bottom:  1px solid black; */
+            background-color: rgb(47, 47, 101);
+        }
+
+        .button{
+            border: 0.5 solid #999;
+            line-height: 100px;
+            text-align: center;
+            font-size: 25px;
+            font-weight: 700;
+            cursor:pointer; 
+            
+        }
+
+        .button:hover{
+            background-color: #999;
+            color: white;
+        }
+
+        #equal{
+            background-color: rgb(47, 47, 101);
+            color: white;
+            height: 105px;
+        }
+
+        #inp{
+            width: 100%;
+            height: 70px;
+            font-size: 40px;
+        }
+        button{
+            height: 90px;
+            width: 90px;
+            background-color: rgb(3, 172, 166);
+            font-size: 30px;
+        }
+
+        button:hover{
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="display">
+            <input type="text" name="name1" id="inp">
+
+        </div>
+        <div class="buttons">
+            <div class="button"><button id="button1">C</button></div>
+            <div class="button"><button id="button2">+</button></div>
+            <div class="button"><button id="button3">-</button></div>
+            <div class="button"><button id="button4">*</button></div>
+            <div class="button"><button id="button5">/</button></div>
+            <div class="button"><button id="button6">1</button></div>
+            <div class="button"><button id="button7">2</button></div>
+            <div class="button"><button id="button8">3</button></div>
+            <div class="button"><button id="button9">4</button></div>
+            <div class="button"><button id="button10">5</button></div>
+            <div class="button"><button id="button11">6</button></div>
+            <div class="button"><button id="button12">7</button></div>
+            <div class="button"><button id="button13">8</button></div>
+            <div class="button"><button id="button14">9</button></div>
+            <div class="button"><button id="button15">0</button></div>
+            <div class="button"><button id="button16">.</button></div>
+            <div class="button"><button id="button17">(</button></div>
+            <div class="button"><button id="button18">)</button></div>
+            <div class="button"><button id="button19">&larr;</button></div>
+            <div class="button"><button id="equal" class="button">=</button></div>
+        </div>
+    </div>
+</body>
+<script>
+    document.getElementById("button1").addEventListener("click",function(){document.getElementById("inp").value="";});
+    document.getElementById("button2").addEventListener("click",function(){document.getElementById("inp").value+="+";});
+    document.getElementById("button3").addEventListener("click",function(){document.getElementById("inp").value+="-";});
+    document.getElementById("button4").addEventListener("click",function(){document.getElementById("inp").value+="*";});
+    document.getElementById("button5").addEventListener("click",function(){document.getElementById("inp").value+="/";});
+    document.getElementById("button6").addEventListener("click",function(){document.getElementById("inp").value+="1";});
+    document.getElementById("button7").addEventListener("click",function(){document.getElementById("inp").value+="2";});
+    document.getElementById("button8").addEventListener("click",function(){document.getElementById("inp").value+="3";});
+    document.getElementById("button9").addEventListener("click",function(){document.getElementById("inp").value+="4";});
+    document.getElementById("button10").addEventListener("click",function(){document.getElementById("inp").value+="5";});
+    document.getElementById("button11").addEventListener("click",function(){document.getElementById("inp").value+="6";});
+    document.getElementById("button12").addEventListener("click",function(){document.getElementById("inp").value+="7";});
+    document.getElementById("button13").addEventListener("click",function(){document.getElementById("inp").value+="8";});
+    document.getElementById("button14").addEventListener("click",function(){document.getElementById("inp").value+="9";});
+    document.getElementById("button15").addEventListener("click",function(){document.getElementById("inp").value+="0";});
+    document.getElementById("button16").addEventListener("click",function(){document.getElementById("inp").value+=".";});
+    document.getElementById("button17").addEventListener("click",function(){document.getElementById("inp").value+="(";});
+    document.getElementById("button18").addEventListener("click",function(){document.getElementById("inp").value+=")";});
+    document.getElementById("button19").addEventListener("click",function(){
+    let y = document.getElementById("inp").value;
+    let z = y.slice(0,-1);
+    document.getElementById("inp").value=z;
+});
+
+    
+
+    document.getElementById("equal").addEventListener("click",calc);
+    function calc(){
+        let x=document.getElementById("inp").value;
+        let num=eval(x);
+        document.getElementById("inp").value=num;
+    }
+</script>
+</html>
